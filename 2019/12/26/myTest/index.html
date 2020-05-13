@@ -29,6 +29,14 @@
     #container.show {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
+    .mid-col {
+    position: absolute;
+    right: 0;
+    min-height: 100%;
+    background: white;
+    left: 0px;
+    width: auto;
+}
 
     .myTable{
     border-collapse:collapse;
@@ -80,10 +88,10 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
 <body>
-  <div id="container" q-class="show:isCtnShow">
+  <!-- <div id="container" q-class="show:isCtnShow"> -->
     
     <!--左侧标签开始-->
-    <div class="left-col" q-class="show:isShow">
+    <!-- <div class="left-col" q-class="show:isShow">
         <div class="intrude-less">
           <header id="header" class="inner">
 
@@ -119,7 +127,7 @@
 
           </header>		
         </div>
-    </div>
+    </div> -->
     <!--左侧标签结束-->
 
 
@@ -322,9 +330,19 @@
 
   
               <!--尾部信息-->
+
+              
+
               <nav id="article-nav">
+
+                  <a href="/" id="article-nav-newer" class="article-nav-link-wrap">
+                    <i class="icon-circle-left"></i>
+                    <div class="article-nav-title"> 首页</div>
+                  </a>
+                
+             
                   <a href="/2019/12/26/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-                    <div class="article-nav-title">Hello World1</div>
+                    <div class="article-nav-title">Hello World</div>
                     <i class="icon-circle-right"></i>
                   </a>
                 
@@ -354,6 +372,6 @@
       
       
 
-    </div>
+    <!-- </div> -->
 </body>
 </html>

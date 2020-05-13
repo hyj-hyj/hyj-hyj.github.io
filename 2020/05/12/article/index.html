@@ -284,6 +284,71 @@ public static String httpURLGet(String address) {
   }
   return msg;
 }
+<span style="color: red;">
+(5)通过URL对象以post方式请求：</span>
+public static String httpURLPost(String address,String param) {
+  HttpURLConnection httpURLConnection = null;
+  String msg = "";
+  try {
+      // 1. 获取访问地址URL
+      URL url = new URL(address);
+      // 2. 创建HttpURLConnection对象
+      httpURLConnection = (HttpURLConnection) url.openConnection();
+      /* 3. 设置请求参数等 */
+      // 请求方式  默认 GET
+      httpURLConnection.setRequestMethod("POST");
+      // 超时时间
+      httpURLConnection.setConnectTimeout(3000);
+      // 设置是否输出
+      httpURLConnection.setDoOutput(true);
+      // 设置是否读入
+      httpURLConnection.setDoInput(true);
+      // 设置是否使用缓存
+      httpURLConnection.setUseCaches(false);
+      // 设置此 HttpURLConnection 实例是否应该自动执行 HTTP 重定向
+      httpURLConnection.setInstanceFollowRedirects(true);
+      // 设置请求头
+      httpURLConnection.addRequestProperty("sysId","sysId");
+      // 设置使用标准编码格式编码参数的名-值对
+      httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+      // 连接
+      httpURLConnection.connect();
+      /* 4. 处理输入输出 */
+      // 写入参数到请求中
+      //String params = "username=test&password=123456";
+      OutputStream out = httpURLConnection.getOutputStream();
+      out.write(param.getBytes());
+      // 简化
+      //httpURLConnection.getOutputStream().write(params.getBytes());
+      out.flush();
+      out.close();
+      // 从连接中读取响应信息
+      int code = httpURLConnection.getResponseCode();
+      if (code == 200) {
+          BufferedReader reader = new BufferedReader(
+                  new InputStreamReader(httpURLConnection.getInputStream()));
+          String line;
+          while ((line = reader.readLine()) != null) {
+              msg += line + "\n";
+          }
+          reader.close();
+      }
+      // 处理结果
+      System.out.println(msg);
+  } catch (Exception e) {
+      System.out.println("转发出错，错误信息："+e.getLocalizedMessage()+";"+e.getClass());
+  }finally {
+      // 5. 断开连接
+      if (null != httpURLConnection){
+          try {
+              httpURLConnection.disconnect();
+          }catch (Exception e){
+              System.out.println("httpURLConnection 流关闭异常："+ e.getLocalizedMessage());
+          }
+      }
+  }
+  return msg;
+}
 
 </pre>
                    

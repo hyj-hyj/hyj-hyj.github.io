@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HYJ</title>
+  <title>blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="黄亚军的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="黄亚军的个人博客">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="hyj">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -43,11 +45,10 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/me.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-      <h1 class="header-author"><a href="/">黄亚军</a></h1>
-      
+		  <h1 class="header-author"><a href="/">hyj</a></h1>
 		</hgroup>
 		
 
@@ -56,7 +57,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/sesays/index.html">随笔</a></li>
+				<li><a href="/sesays">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -67,8 +68,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -78,14 +77,18 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://www.163.com/" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+			</div>
+			
+			<div style="margin-top:30px;">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=1805088448&auto=1&height=66"></iframe>
 			</div>
 		</nav>
 	</header>		
@@ -102,22 +105,30 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/me.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">黄亚军</h1>
+			  <h1 class="header-author js-header-author">hyj</h1>
 			</hgroup>
+			
+			
+			
+				
+			
+				
+			
+			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://www.163.com/" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -128,7 +139,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/sesays/index.html">随笔</a></li>
+					<li style="width: 50%"><a href="/sesays">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -144,86 +155,36 @@
           </div>
           <div id="js-content" class="content-ll">
             
-            <article id="post-myTest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-              <div class="article-inner">
-                
-                  <header class="article-header">
-                    
-              
-                <h1 itemprop="name">
-                  <a class="article-title" href="/2020/05/12/article/">httpclient的使用</a>
-                </h1>
-              
-            
-                    
-                    <a href="/2020/05/12/article/" class="archive-article-date">
-                <time datetime="2019-12-26T09:25:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-            </a>
-                    
-                  </header>
-                
-                <div class="article-entry" itemprop="articleBody">
-                  
-                    
-                  
-            
-                  
-                </div>
-                <div class="article-info article-info-index">
-                  
-                  
-                  
-            
-                  
-                    <p class="article-more-link">
-                      <a class="article-more-a" href="/2020/05/12/article/">展开全文 >></a>
-                    </p>
-                  
-            
-                  
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </article>
-            
-            <aside class="wrap-side-operation">
-                <div class="mod-side-operation">
-                    
-                    <div class="jump-container" id="js-jump-container" style="display:none;">
-                        <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                            <i class="icon-font icon-back"></i>
-                        </a>
-                        <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                            <i class="icon-font icon-plane jump-plane"></i>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </aside>  
-
-
-<!--一个章节开始-->            
-    <article id="post-myTest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+    <article id="post-httpclient的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/26/myTest/">idea中常用快捷键</a>
+      <a class="article-title" href="/2021/01/08/httpclient%E7%9A%84%E4%BD%BF%E7%94%A8/">httpclient的使用</a>
     </h1>
   
 
         
-        <a href="/2019/12/26/myTest/" class="archive-article-date">
-  	<time datetime="2019-12-26T09:25:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+        <a href="/2021/01/08/httpclient%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-01-08T08:14:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>1.使用HttpClients的createDefault()方法创建CloseableHttpClient对象。</p>
+<p>2.基于要发送的HTTP请求类型创建HttpGet或者HttpPost请求实例。</p>
+<p>3.使用addHeader方法设置content_type类型和字符集。如果有需要还可以设置代理</p>
+<p>4.对于POST请求,创建NameValuePair列表,并添加所有的表单参数.然后把它填充进HttpPost实体.。</p>
+<p>5.通过执行CloseableHttpClient对象的实例的execute()方法获取CloseableHttpResponse对象。</p>
+<p>6.从CloseableHttpResponse实例中获取状态码,错误信息,以及响应页面等等。</p>
+<p>7.最后关闭HttpClient资源。</p>
+        
+          <a class="article-more-a" href="/2021/01/08/httpclient%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
         
       
 
@@ -236,7 +197,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/26/myTest/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/01/08/httpclient%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -261,46 +222,36 @@
         
     </div>
 </aside>
-<!--一个章节结束--> 
 
 
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-idea中常用快捷键" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/26/hello-world/">Hello World</a>
+      <a class="article-title" href="/2021/01/08/idea%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">idea中常用快捷键</a>
     </h1>
   
 
         
-        <a href="/2019/12/26/hello-world/" class="archive-article-date">
-  	<time datetime="2019-12-26T08:42:27.894Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+        <a href="/2021/01/08/idea%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="archive-article-date">
+  	<time datetime="2021-01-08T07:01:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <ul>
+<li><p>Ctrl键</p>
+        
+          <a class="article-more-a" href="/2021/01/08/idea%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/#more">more >></a>
+        
       
 
       
@@ -312,7 +263,77 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/26/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/01/08/idea%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="w-markdown的常用语法" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/07/markdown%E7%9A%84%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">markdown的常用语法</a>
+    </h1>
+  
+
+        
+        <a href="/2021/01/07/markdown%E7%9A%84%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-01-07T13:17:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><p>markdown标题</p>
+<ol>
+<li><p>井号加空格表示标题，一级标题对应一个井号，二级标题对应两个井号，以此类推</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 这是一级标题</span></span><br><span class="line"><span class="section">## 这是二级标题</span></span><br><span class="line"><span class="section">### 这是三级标题</span></span><br><span class="line"><span class="section">#### 这是四级标题</span></span><br><span class="line"><span class="section">##### 这是五级标题</span></span><br><span class="line"><span class="section">###### 这是六级标题</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/01/07/markdown%E7%9A%84%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/07/markdown%E7%9A%84%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -352,7 +373,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2021 hyj
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -393,8 +414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -406,15 +425,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -427,7 +444,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <i class="icon-search icon" q-show="search|isEmptyStr"></i>
           <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
         </div>
-        <!-- <div class="widget tagcloud search-tag">
+        <div class="widget tagcloud search-tag">
           <p class="search-tag-wording">tag:</p>
           <label class="search-switch">
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
@@ -436,9 +453,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             
             <div class="clearfix"></div>
           </ul>
-        </div> -->
+        </div>
         <ul class="search-ul">
-          <!-- <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
             缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
@@ -472,53 +489,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <i class="icon-price-tags icon"></i>
               <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
             </p>
-          </li> -->
-          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            <a href="/2019/12/26/myTest/">1、idea中的快捷键</a><br/><br/>
-            <a href="/2019/12/26/hello-world/">2、Hello World</a><br/><br/>
-          </p>
+          </li>
         </ul>
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度网站</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.zhihu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>知乎</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>简书</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://hyj-hyj.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://hyj-hyj.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://hyj-hyj.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">清澈&lt;br&gt;明朗&lt;br&gt;善良&lt;br&gt;纯真</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">清澈&lt;br&gt;&lt;br&gt;明朗&lt;br&gt;&lt;br&gt;善良&lt;br&gt;&lt;br&gt;纯真&lt;br&gt;</div>
   	  	
     	</section>
     

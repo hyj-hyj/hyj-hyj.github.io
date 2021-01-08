@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>httpclient的使用 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
-<meta property="og:site_name" content="Hexo">
+  <meta name="description" content="1.使用HttpClients的createDefault()方法创建CloseableHttpClient对象。 2.基于要发送的HTTP请求类型创建HttpGet或者HttpPost请求实例。 3.使用addHeader方法设置content_type类型和字符集。如果有需要还可以设置代理 4.对于POST请求,创建NameValuePair列表,并添加所有的表单参数.然后把它填充进HttpP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="httpclient的使用">
+<meta property="og:url" content="http://yoursite.com/2021/01/08/httpclient%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="1.使用HttpClients的createDefault()方法创建CloseableHttpClient对象。 2.基于要发送的HTTP请求类型创建HttpGet或者HttpPost请求实例。 3.使用addHeader方法设置content_type类型和字符集。如果有需要还可以设置代理 4.对于POST请求,创建NameValuePair列表,并添加所有的表单参数.然后把它填充进HttpP">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:published_time" content="2021-01-08T08:14:02.000Z">
+<meta property="article:modified_time" content="2021-01-08T08:29:43.935Z">
+<meta property="article:author" content="hyj">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -43,10 +47,10 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/img/me.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">hyj</a></h1>
 		</hgroup>
 		
 
@@ -55,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/sesays">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -66,8 +70,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -77,14 +79,18 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="https://weibo.com/" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="https://www.163.com/" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+			</div>
+			
+			<div style="margin-top:30px;">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=1805088448&auto=1&height=66"></iframe>
 			</div>
 		</nav>
 	</header>		
@@ -101,10 +107,10 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/img/me.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">hyj</h1>
 			</hgroup>
 			
 			
@@ -118,13 +124,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="https://weibo.com/" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="https://www.163.com/" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -135,7 +141,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="/sesays">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -150,49 +156,107 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-httpclient的使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/12/article/" class="archive-article-date">
-  	<time datetime="2020-05-12T02:36:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/article/">article</a>
+    <h1 class="article-title" itemprop="name">
+      httpclient的使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2021/01/08/httpclient%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-01-08T08:14:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.使用HttpClients的createDefault()方法创建CloseableHttpClient对象。</p>
+<p>2.基于要发送的HTTP请求类型创建HttpGet或者HttpPost请求实例。</p>
+<p>3.使用addHeader方法设置content_type类型和字符集。如果有需要还可以设置代理</p>
+<p>4.对于POST请求,创建NameValuePair列表,并添加所有的表单参数.然后把它填充进HttpPost实体.。</p>
+<p>5.通过执行CloseableHttpClient对象的实例的execute()方法获取CloseableHttpResponse对象。</p>
+<p>6.从CloseableHttpResponse实例中获取状态码,错误信息,以及响应页面等等。</p>
+<p>7.最后关闭HttpClient资源。</p>
+   <a id="more"></a>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>   （1）方式一，post请求以表单方式提交参数</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">httpClientDoPost</span><span class="params">(String url, Map&lt;String,Object&gt; params)</span> </span>&#123;</span><br><span class="line">    String res = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="comment">//创建CloseableHttpClient对象</span></span><br><span class="line">        CloseableHttpClient httpclient = HttpClients.createDefault();</span><br><span class="line">        <span class="comment">//创建httpost实例</span></span><br><span class="line">        HttpPost httpPost = <span class="keyword">new</span> HttpPost(url);</span><br><span class="line">        <span class="comment">//设置代理</span></span><br><span class="line">        <span class="comment">/*HttpHost proxy = new HttpHost(ConstantProperties.getProxyIp(), ConstantProperties.getProxyPort(), "https");</span></span><br><span class="line"><span class="comment">        RequestConfig config = RequestConfig.custom()</span></span><br><span class="line"><span class="comment">                .setProxy(proxy)</span></span><br><span class="line"><span class="comment">                .build();</span></span><br><span class="line"><span class="comment">        httpPost.setConfig(config);*/</span></span><br><span class="line">        <span class="comment">//设置content_type类型</span></span><br><span class="line">        httpPost.addHeader(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded;charset=UTF-8"</span>);</span><br><span class="line">        <span class="comment">//解析需要传递的参数</span></span><br><span class="line">        List&lt;NameValuePair&gt; formparams = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, Object&gt; entry : params.entrySet()) &#123;</span><br><span class="line">            formparams.add(<span class="keyword">new</span> BasicNameValuePair(entry.getKey(), String.valueOf(entry.getValue())));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//参数转码</span></span><br><span class="line">        UrlEncodedFormEntity uefEntity = <span class="keyword">new</span> UrlEncodedFormEntity(formparams, <span class="string">"UTF-8"</span>);</span><br><span class="line">        httpPost.setEntity(uefEntity);</span><br><span class="line">        HttpResponse response = httpclient.execute(httpPost);</span><br><span class="line">        <span class="comment">//获取状态值</span></span><br><span class="line">        <span class="keyword">int</span> status = response.getStatusLine().getStatusCode();</span><br><span class="line">        HttpEntity entity = response.getEntity();</span><br><span class="line">        <span class="keyword">if</span>(entity != <span class="keyword">null</span>)&#123;</span><br><span class="line">            res = EntityUtils.toString(entity);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   （2）方式二，post请求以json方式提交参数</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">httpClientPostJson</span><span class="params">(String url, String json)</span></span>&#123;</span><br><span class="line">  <span class="comment">//创建默认的httpClient实例.</span></span><br><span class="line">  CloseableHttpClient httpclient = <span class="keyword">null</span>;</span><br><span class="line">  <span class="comment">//接收响应结果</span></span><br><span class="line">  CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      List&lt;NameValuePair&gt; params = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">      <span class="comment">//创建httppost</span></span><br><span class="line">      httpclient = HttpClients.createDefault();</span><br><span class="line">      HttpPost httpPost = <span class="keyword">new</span> HttpPost(url);</span><br><span class="line">      <span class="comment">/*HttpHost proxy = new HttpHost(ConstantProperties.getProxyIp(), ConstantProperties.getProxyPort(), "http");</span></span><br><span class="line"><span class="comment">      RequestConfig config = RequestConfig.custom()</span></span><br><span class="line"><span class="comment">              .setProxy(proxy)</span></span><br><span class="line"><span class="comment">              .build();</span></span><br><span class="line"><span class="comment">      httpPost.setConfig(config);*/</span></span><br><span class="line">      httpPost.addHeader(HTTP.CONTENT_TYPE, <span class="string">"application/json;charset=UTF-8"</span>);</span><br><span class="line">      <span class="comment">//参数</span></span><br><span class="line">      StringEntity se = <span class="keyword">new</span> StringEntity(json, <span class="string">"UTF-8"</span>);</span><br><span class="line">      se.setContentEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line">      se.setContentType(<span class="string">"application/json"</span>);<span class="comment">//发送json需要设置contentType</span></span><br><span class="line">      httpPost.setEntity(se);</span><br><span class="line">      response = httpclient.execute(httpPost);</span><br><span class="line">      <span class="comment">//获取状态值</span></span><br><span class="line">      <span class="keyword">int</span> status = response.getStatusLine().getStatusCode();</span><br><span class="line">      <span class="keyword">if</span>(status != <span class="number">200</span>)&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//解析返结果</span></span><br><span class="line">      HttpEntity entity = response.getEntity();</span><br><span class="line">      <span class="keyword">if</span>(entity != <span class="keyword">null</span>)&#123;</span><br><span class="line">          String returnStr = EntityUtils.toString(entity, <span class="string">"UTF-8"</span>);</span><br><span class="line">          <span class="keyword">return</span> returnStr;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">      <span class="keyword">return</span> e.getMessage();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   （3）方式三，get请求以完整地址提交</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">httpClientGetUrl</span><span class="params">(String url)</span> </span>&#123;</span><br><span class="line">  CloseableHttpClient httpclient = <span class="keyword">null</span>;</span><br><span class="line">  CloseableHttpResponse response = <span class="keyword">null</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      httpclient = HttpClients.createDefault();</span><br><span class="line">      <span class="comment">// 创建httpget.</span></span><br><span class="line">      HttpGet httpget = <span class="keyword">new</span> HttpGet(url);</span><br><span class="line">      response = httpclient.execute(httpget);</span><br><span class="line">      <span class="comment">//获取状态值</span></span><br><span class="line">      <span class="keyword">int</span> status = response.getStatusLine().getStatusCode();</span><br><span class="line">      <span class="keyword">if</span>(status != <span class="number">200</span>)&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 获取响应实体</span></span><br><span class="line">      HttpEntity entity = response.getEntity();</span><br><span class="line">      <span class="keyword">if</span> (entity != <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="comment">// 得到响应内容</span></span><br><span class="line">          <span class="keyword">return</span> EntityUtils.toString(entity);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   （4）方式四，通过URL对象以get方式请求</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">httpURLGet</span><span class="params">(String address)</span> </span>&#123;</span><br><span class="line">  HttpURLConnection httpURLConnection = <span class="keyword">null</span>;</span><br><span class="line">  String msg = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 1. 得到访问地址的URL</span></span><br><span class="line">      URL url = <span class="keyword">new</span> URL(address);</span><br><span class="line">      <span class="comment">// 2. 得到网络访问对象java.net.HttpURLConnection</span></span><br><span class="line">      httpURLConnection = (HttpURLConnection) url.openConnection();</span><br><span class="line">      <span class="comment">/* 3. 设置请求参数（过期时间，输入、输出流、访问方式），以流的形式进行连接 */</span></span><br><span class="line">      <span class="comment">// 设置是否向HttpURLConnection输出</span></span><br><span class="line">      httpURLConnection.setDoOutput(<span class="keyword">false</span>);</span><br><span class="line">      <span class="comment">// 设置是否从httpUrlConnection读入</span></span><br><span class="line">      httpURLConnection.setDoInput(<span class="keyword">true</span>);</span><br><span class="line">      <span class="comment">// 设置请求方式　默认为GET</span></span><br><span class="line">      httpURLConnection.setRequestMethod(<span class="string">"GET"</span>);</span><br><span class="line">      <span class="comment">// 设置是否使用缓存</span></span><br><span class="line">      httpURLConnection.setUseCaches(<span class="keyword">true</span>);</span><br><span class="line">      <span class="comment">// 设置此 HttpURLConnection 实例是否应该自动执行 HTTP 重定向</span></span><br><span class="line">      httpURLConnection.setInstanceFollowRedirects(<span class="keyword">true</span>);</span><br><span class="line">      <span class="comment">// 设置超时时间</span></span><br><span class="line">      httpURLConnection.setConnectTimeout(<span class="number">10000</span>);</span><br><span class="line">      <span class="comment">// 连接</span></span><br><span class="line">      httpURLConnection.connect();</span><br><span class="line">      <span class="comment">// 4. 得到响应状态码的返回值 responseCode</span></span><br><span class="line">      <span class="keyword">int</span> code = httpURLConnection.getResponseCode();</span><br><span class="line">      <span class="comment">// 5. 如果返回值正常，数据在网络中是以流的形式得到服务端返回的数据</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (code == <span class="number">200</span>) &#123; <span class="comment">// 正常响应</span></span><br><span class="line">          <span class="comment">// 从流中读取响应信息</span></span><br><span class="line">          BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(httpURLConnection.getInputStream()));</span><br><span class="line">          String line = <span class="keyword">null</span>;</span><br><span class="line">          <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123; <span class="comment">// 循环从流中读取</span></span><br><span class="line">              <span class="comment">//msg += line + "\n";</span></span><br><span class="line">              msg += line ;</span><br><span class="line">          &#125;</span><br><span class="line">          reader.close(); <span class="comment">// 关闭流</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 显示响应结果</span></span><br><span class="line">      System.out.println(msg);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      System.out.println(e.getLocalizedMessage()+<span class="string">";"</span>+e.getClass());</span><br><span class="line">  &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">      <span class="comment">// 6. 断开连接，释放资源</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">null</span> != httpURLConnection)&#123;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">              httpURLConnection.disconnect();</span><br><span class="line">          &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">              System.out.println(<span class="string">"httpURLConnection 流关闭异常："</span>+ e.getLocalizedMessage());</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   （5）方式五，通过URL对象以post方式请求</p>
+   <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">httpURLPost</span><span class="params">(String address,String param)</span> </span>&#123;</span><br><span class="line">  HttpURLConnection httpURLConnection = <span class="keyword">null</span>;</span><br><span class="line">  String msg = <span class="string">""</span>;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// 1. 获取访问地址URL</span></span><br><span class="line">      URL url = <span class="keyword">new</span> URL(address);</span><br><span class="line">      <span class="comment">// 2. 创建HttpURLConnection对象</span></span><br><span class="line">      httpURLConnection = (HttpURLConnection) url.openConnection();</span><br><span class="line">      <span class="comment">/* 3. 设置请求参数等 */</span></span><br><span class="line">      <span class="comment">// 请求方式  默认 GET</span></span><br><span class="line">      httpURLConnection.setRequestMethod(<span class="string">"POST"</span>);</span><br><span class="line">      <span class="comment">// 超时时间</span></span><br><span class="line">      httpURLConnection.setConnectTimeout(<span class="number">3000</span>);</span><br><span class="line">      <span class="comment">// 设置是否输出</span></span><br><span class="line">      httpURLConnection.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">      <span class="comment">// 设置是否读入</span></span><br><span class="line">      httpURLConnection.setDoInput(<span class="keyword">true</span>);</span><br><span class="line">      <span class="comment">// 设置是否使用缓存</span></span><br><span class="line">      httpURLConnection.setUseCaches(<span class="keyword">false</span>);</span><br><span class="line">      <span class="comment">// 设置此 HttpURLConnection 实例是否应该自动执行 HTTP 重定向</span></span><br><span class="line">      httpURLConnection.setInstanceFollowRedirects(<span class="keyword">true</span>);</span><br><span class="line">      <span class="comment">// 设置请求头</span></span><br><span class="line">      httpURLConnection.addRequestProperty(<span class="string">"sysId"</span>,<span class="string">"sysId"</span>);</span><br><span class="line">      <span class="comment">// 设置使用标准编码格式编码参数的名-值对</span></span><br><span class="line">      httpURLConnection.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">      <span class="comment">// 连接</span></span><br><span class="line">      httpURLConnection.connect();</span><br><span class="line">      <span class="comment">/* 4. 处理输入输出 */</span></span><br><span class="line">      <span class="comment">// 写入参数到请求中</span></span><br><span class="line">      <span class="comment">//String params = "username=test&amp;password=123456";</span></span><br><span class="line">      OutputStream out = httpURLConnection.getOutputStream();</span><br><span class="line">      out.write(param.getBytes());</span><br><span class="line">      <span class="comment">// 简化</span></span><br><span class="line">      <span class="comment">//httpURLConnection.getOutputStream().write(params.getBytes());</span></span><br><span class="line">      out.flush();</span><br><span class="line">      out.close();</span><br><span class="line">      <span class="comment">// 从连接中读取响应信息</span></span><br><span class="line">      <span class="keyword">int</span> code = httpURLConnection.getResponseCode();</span><br><span class="line">      <span class="keyword">if</span> (code == <span class="number">200</span>) &#123;</span><br><span class="line">          BufferedReader reader = <span class="keyword">new</span> BufferedReader(</span><br><span class="line">                  <span class="keyword">new</span> InputStreamReader(httpURLConnection.getInputStream()));</span><br><span class="line">          String line;</span><br><span class="line">          <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">              msg += line + <span class="string">"\n"</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          reader.close();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 处理结果</span></span><br><span class="line">      System.out.println(msg);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      System.out.println(e.getLocalizedMessage()+<span class="string">";"</span>+e.getClass());</span><br><span class="line">  &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">      <span class="comment">// 5. 断开连接</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">null</span> != httpURLConnection)&#123;</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">              httpURLConnection.disconnect();</span><br><span class="line">          &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">              System.out.println(<span class="string">"httpURLConnection 流关闭异常："</span>+ e.getLocalizedMessage());</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> msg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/01/08/idea%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">idea中常用快捷键</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -202,7 +266,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2021 hyj
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -215,8 +279,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -243,8 +307,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -256,15 +318,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -328,43 +388,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">清澈&lt;br&gt;&lt;br&gt;明朗&lt;br&gt;&lt;br&gt;善良&lt;br&gt;&lt;br&gt;纯真&lt;br&gt;</div>
   	  	
     	</section>
     
